@@ -1,0 +1,272 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar:hover {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 215, 0, .1);
+}
+
+::-webkit-scrollbar-track:hover {
+  background: rgba(255, 215, 0, .2);
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 48px;
+  max-height: 48px;
+  border-radius: 8px;
+  background: gold;
+}
+
+::-webkit-scrollbar-corner {
+  border-radius: 8px;
+  background: gold;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+}
+
+body {
+  margin: 0;
+  color: gold;
+  font-size: 14px;
+  background: #333;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body.showCS {
+  overflow: hidden;
+}
+
+header {
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 48px;
+  display: flex;
+  position: sticky;
+  padding-left: 8px;
+  align-items: center;
+}
+
+header a {
+  width: 32px;
+  height: 32px;
+  fill: gold;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  align-items: center;
+  border-top: 1px solid gold;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+main .load {
+  padding: 3px;
+  width: 33.33%;
+  height: 333px;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  align-items: center;
+  transition: .3s linear;
+  justify-content: center;
+}
+
+main .load:nth-child(2n+1) {
+  background: rgba(0, 0, 0, .1);
+}
+
+main .load:hover {
+  background: rgba(0, 0, 0, .3);
+}
+
+.codeShow {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: fixed;
+  overflow-y: auto;
+  visibility: hidden;
+  transition: all .1s ease;
+  background: rgba(0, 0, 0, .7);
+}
+
+.codeShow.showCode {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loadDivCS {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 500px;
+  min-height: 300px;
+  position: relative;
+  transition: .3s ease;
+  background-color: #222;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform: scale3d(.5, .5, .5);
+}
+
+.showCode .loadDivCS {
+  transform: translateY(48px);
+}
+
+.show {
+  background: #333;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.show .load {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.codeDivCS+.codeDivCS {
+  margin-top: 10px;
+}
+
+.codeDivCS {
+  padding: 16px;
+  position: relative;
+  box-shadow: 0 0 2px black;
+}
+
+.codeDivCS span {
+  top: -12px;
+  padding: 4px;
+  background: #111;
+  position: relative;
+}
+
+.copy {
+  top: 0;
+  right: 0;
+  padding: 4px;
+  color: gold;
+  font-size: 14px;
+  font-weight: bold;
+  user-select: none;
+  position: absolute;
+  background: #111;
+}
+
+.copy::before {
+  content: '';
+  top: 4px;
+  width: 10px;
+  height: 12px;
+  margin-right: 8px;
+  position: relative;
+  display: inline-block;
+  border: 1px solid gold;
+  box-shadow: 2px -2px #111, 3px -3px;
+}
+
+code {
+  display: block;
+  white-space: pre;
+  padding: 8px 16px;
+  line-height: 18px;
+  background: #111;
+}
+
+#cssCodeID {
+  overflow: auto;
+  max-height: 200px;
+  padding: 14px 8px 8px 14px;
+}
+
+.XBNCS {
+  top: 8px;
+  right: 8px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  color: red;
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.XBNCS:hover {
+  transition: .5s ease;
+  background-color: rgba(255, 0, 0, .5);
+}
+
+.esc {
+  top: 8px;
+  left: 8px;
+  color: gold;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
+  position: absolute;
+  visibility: hidden;
+  background-color: rgba(255, 215, 0, .1);
+}
+
+.XBNCS:hover+.esc {
+  visibility: visible;
+}
+
+footer {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a {
+  height: 32px;
+  transition: .3s ease;
+}
+
+footer a:hover {
+  fill: gold;
+  transform: scale3d(1.3, 1.3, 1.3);
+}
+
+@media (max-width:768px) {
+  main .load {
+    width: 50%
+  }
+}
+
+@media (max-width:480px) {
+  main .load {
+    width: 100%
+  }
+}
